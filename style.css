@@ -1,0 +1,92 @@
+:root{
+  --bg:#F5F4F0;
+  --surface:#FFFFFF;
+  --ink:#1C2B3A;
+  --muted:#5B6B7A;
+  --line:#D8D3C8;
+  --accent:#1D5A6D;
+  --focus:#1D5A6D;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.6;
+}
+
+h1,h2,h3{
+  font-family:"Fraunces",Georgia,"Times New Roman",serif;
+  font-weight:650;
+  line-height:1.15;
+  margin:0 0 .3em;
+}
+
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px}
+
+a{color:var(--accent)}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:3px}
+
+.skip{
+  position:absolute;left:12px;top:-100px;
+  background:var(--accent);color:#fff;
+  padding:10px 16px;border-radius:6px;font-weight:700;z-index:10;
+}
+.skip:focus{top:12px}
+
+.masthead{
+  border-bottom:3px solid var(--ink);
+  padding-top:36px;
+  background:var(--surface);
+}
+.kicker{
+  margin:0 0 .4em;
+  font-size:.95rem;
+  color:var(--muted);
+}
+.masthead h1{font-size:clamp(2.2rem,6vw,3.1rem)}
+.role{margin:.2em 0 0;color:var(--muted);font-size:1.05rem}
+
+.nav{border-top:1px solid var(--line);margin-top:22px}
+.nav .wrap{display:flex;flex-wrap:wrap;gap:4px 26px;padding-block:12px}
+.nav a{font-weight:700;text-decoration:none}
+.nav a:hover{text-decoration:underline}
+
+main section{padding-block:34px;border-bottom:1px solid var(--line)}
+main section:last-child{border-bottom:0}
+h2{font-size:1.5rem}
+p{max-width:66ch}
+.muted{color:var(--muted);font-size:.95rem}
+
+.records{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:14px}
+.record{
+  border-left:5px solid var(--tag,var(--accent));
+  background:var(--surface);
+  padding:14px 18px;
+  border-radius:4px;
+}
+.rhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px}
+.rhead h3{font-size:1.1rem;margin:0}
+.record p{margin:.4em 0 0;font-size:.98rem}
+
+.status{
+  font-size:.82rem;
+  font-weight:700;
+  color:var(--ink);
+  background:#EFEAD9;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:2px 12px;
+}
+
+footer{padding-block:26px}
+footer p{max-width:66ch}
+
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+}
