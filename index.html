@@ -3,112 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eren — Erişilebilirlik Uzmanlığı Portfolyosu</title>
-<meta name="description" content="WCAG, PDF/UA ve doküman erişilebilirliği üzerine çalışmalar. Öncesi/sonrası örnekler ve denetim raporları.">
+<title data-i18n="meta.title">Eren — Erişilebilirlik Portfolyosu</title>
+<meta name="description" content="WCAG, PDF/UA ve doküman erişilebilirliği üzerine öncesi/sonrası örnekler.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a class="skip" href="#icerik">İçeriğe geç</a>
+<a class="skip" href="#icerik" data-i18n="skip">İçeriğe geç</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <p class="kicker">Erişilebilirlik Değerlendirme Portfolyosu</p>
-    <h1>Eren</h1>
-    <p class="role">WCAG 2.2 · PDF/UA · Doküman Erişilebilirliği</p>
+<div class="toolbar wrap" role="region" aria-label="Okuma tercihleri">
+  <div class="tgroup" role="group" aria-label="Dil">
+    <button type="button" class="tbtn" data-lang="tr" aria-pressed="true">Türkçe</button>
+    <button type="button" class="tbtn" data-lang="en" aria-pressed="false">English</button>
   </div>
-  <nav class="nav" aria-label="Bölüm bağlantıları">
-    <div class="wrap">
-      <a href="#hakkimda">Hakkımda</a>
-      <a href="#projeler">Örnek Çalışmalar</a>
-      <a href="#iletisim">İletişim</a>
-    </div>
+  <div class="tgroup" role="group" aria-label="Kontrast" data-i18n-label="toolbar.contrastGroup">
+    <button type="button" class="tbtn" data-contrast="normal" aria-pressed="true" data-i18n="toolbar.contrastNormal">Standart</button>
+    <button type="button" class="tbtn" data-contrast="high" aria-pressed="false" data-i18n="toolbar.contrastHigh">Yüksek kontrast</button>
+  </div>
+  <div class="tgroup" role="group" aria-label="Yazı boyutu" data-i18n-label="toolbar.sizeGroup">
+    <button type="button" class="tbtn tsize" data-scale="100" aria-pressed="true">A</button>
+    <button type="button" class="tbtn tsize" data-scale="115" aria-pressed="false">A+</button>
+    <button type="button" class="tbtn tsize" data-scale="130" aria-pressed="false">A++</button>
+  </div>
+</div>
+
+<header class="intro wrap">
+  <h1 data-i18n="h1">Eren — erişilebilirlik değerlendirmesi ve doküman düzeltmesi</h1>
+  <p class="role" data-i18n="role">Yirmi yıllık eğitimcilikten WCAG ve PDF/UA uzmanlığına geçiş sürecimden örnekler.</p>
+  <nav aria-label="Bölümler">
+    <a href="#hakkimda" data-i18n="nav.about">Hakkımda</a>
+    <a href="#projeler" data-i18n="nav.projects">Örnek çalışmalar</a>
+    <a href="#iletisim" data-i18n="nav.contact">İletişim</a>
   </nav>
 </header>
 
 <main id="icerik" class="wrap">
 
   <section id="hakkimda" aria-labelledby="h-hakkimda">
-    <h2 id="h-hakkimda">Hakkımda</h2>
-    <p>
-      Devlet okulunda yirmi yıldır İngilizce öğretmenliği ve müdür
-      yardımcılığı yapıyorum. IAAP’ın CPACC sertifikası üzerinden
-      erişilebilirlik alanına geçiş yapıyor, WCAG ve PDF/UA
-      standartlarında eğitim materyallerinin uzaktan erişilebilirlik
-      değerlendirmesi ve düzeltmesi üzerine uzmanlaşıyorum.
-    </p>
-    <p class="muted">
-      <em>Not: Bu paragrafı kendi cümlelerinle güncelle — burası yalnızca
-      taslak.</em>
-    </p>
+    <h2 id="h-hakkimda" data-i18n="about.h">Hakkımda</h2>
+    <p data-i18n="about.p1">Devlet okulunda yirmi yıldır İngilizce öğretmenliği ve müdür yardımcılığı yapıyorum. IAAP’ın CPACC sertifikası üzerinden erişilebilirlik alanına geçiş yapıyor, WCAG ve PDF/UA standartlarında eğitim materyallerinin uzaktan erişilebilirlik değerlendirmesi ve düzeltmesi üzerine uzmanlaşıyorum.</p>
+    <p class="muted" data-i18n="about.note">Not: Bu paragrafı kendi cümlelerinle güncelle — burası yalnızca taslak.</p>
   </section>
 
   <section id="projeler" aria-labelledby="h-projeler">
-    <h2 id="h-projeler">Örnek Çalışmalar</h2>
-    <p>
-      Her kayıt, gerçek bir kaynak dokümanın öncesi/sonrası
-      karşılaştırmasını ve kullanılan denetim aracının raporunu içerir.
-    </p>
+    <h2 id="h-projeler" data-i18n="proj.h">Örnek çalışmalar</h2>
+    <p data-i18n="proj.p">Her kayıt, gerçek bir kaynak dokümanın öncesi/sonrası karşılaştırmasını ve kullanılan denetim aracının raporunu içerir.</p>
 
     <ul class="records">
-      <li class="record" style="--tag:#1D5A6D">
+      <li class="record">
         <div class="rhead">
-          <h3>PDF Erişilebilirliği</h3>
-          <span class="status">Hazırlanıyor</span>
+          <h3 data-i18n="proj.pdf.h">PDF erişilebilirliği</h3>
+          <span class="status" data-i18n="proj.status.pending">Hazırlanıyor</span>
         </div>
-        <p>Taglama, okuma sırası ve alternatif metin düzeltmesi. Araç: Acrobat Pro, PAC 2024.</p>
+        <p data-i18n="proj.pdf.p">Taglama, okuma sırası ve alternatif metin düzeltmesi. Araç: Acrobat Pro, PAC 2024.</p>
+        <p class="files"><a href="files/pdf-once.pdf"><span data-i18n="link.before">Önce</span> (PDF)</a><a href="files/pdf-sonra.pdf"><span data-i18n="link.after">Sonra</span> (PDF)</a></p>
       </li>
-      <li class="record" style="--tag:#5B4B8A">
+      <li class="record">
         <div class="rhead">
-          <h3>Word Belgesi</h3>
-          <span class="status">Hazırlanıyor</span>
+          <h3 data-i18n="proj.word.h">Word belgesi</h3>
+          <span class="status" data-i18n="proj.status.pending">Hazırlanıyor</span>
         </div>
-        <p>Başlık stilleri, alternatif metin ve bağlantı metni düzeltmesi. Araç: Word Erişilebilirlik Denetleyicisi.</p>
+        <p data-i18n="proj.word.p">Başlık stilleri, alternatif metin ve bağlantı metni düzeltmesi. Araç: Word Erişilebilirlik Denetleyicisi.</p>
+        <p class="files"><a href="files/word-once.docx"><span data-i18n="link.before">Önce</span> (DOCX)</a><a href="files/word-sonra.docx"><span data-i18n="link.after">Sonra</span> (DOCX)</a></p>
       </li>
-      <li class="record" style="--tag:#2E7D5B">
+      <li class="record">
         <div class="rhead">
-          <h3>Excel Tablosu</h3>
-          <span class="status">Hazırlanıyor</span>
+          <h3 data-i18n="proj.excel.h">Excel tablosu</h3>
+          <span class="status" data-i18n="proj.status.pending">Hazırlanıyor</span>
         </div>
-        <p>Tablo başlıkları, sayfa adlandırma ve renk-bağımsız durum gösterimi. Araç: Excel Erişilebilirlik Denetleyicisi.</p>
+        <p data-i18n="proj.excel.p">Tablo başlıkları, sayfa adlandırma ve renk-bağımsız durum gösterimi. Araç: Excel Erişilebilirlik Denetleyicisi.</p>
+        <p class="files"><a href="files/excel-once.xlsx"><span data-i18n="link.before">Önce</span> (XLSX)</a><a href="files/excel-sonra.xlsx"><span data-i18n="link.after">Sonra</span> (XLSX)</a></p>
       </li>
-      <li class="record" style="--tag:#A0522D">
+      <li class="record">
         <div class="rhead">
-          <h3>InDesign Yayını</h3>
-          <span class="status">Hazırlanıyor</span>
+          <h3 data-i18n="proj.id.h">InDesign yayını</h3>
+          <span class="status" data-i18n="proj.status.pending">Hazırlanıyor</span>
         </div>
-        <p>Okuma sırası, nesne alternatif metni ve taglanmış PDF dışa aktarımı. Araç: InDesign 21.5, PAC.</p>
+        <p data-i18n="proj.id.p">Okuma sırası, nesne alternatif metni ve taglanmış PDF dışa aktarımı. Araç: InDesign 21.5, PAC.</p>
+        <p class="files"><a href="files/indesign-once.pdf"><span data-i18n="link.before">Önce</span> (PDF)</a><a href="files/indesign-sonra.pdf"><span data-i18n="link.after">Sonra</span> (PDF)</a></p>
       </li>
-      <li class="record" style="--tag:#B5792B">
+      <li class="record">
         <div class="rhead">
-          <h3>Web Sayfası</h3>
-          <span class="status">Bu site</span>
+          <h3 data-i18n="proj.web.h">Web sayfası</h3>
+          <span class="status" data-i18n="proj.status.live">Bu site</span>
         </div>
-        <p>Bu sayfanın kendisi: anlamsal HTML, atlama bağlantısı, klavye odağı, kontrast oranları. Araç: axe, WAVE, klavye testi.</p>
+        <p data-i18n="proj.web.p">Bu sayfanın kendisi: dil seçeneği, kontrast kontrolü, yazı boyutu ve taşma olmadan yeniden düzenlenme (WCAG 1.4.10 Reflow). Araç: axe, WAVE, klavye testi.</p>
       </li>
     </ul>
   </section>
 
   <section id="iletisim" aria-labelledby="h-iletisim">
-    <h2 id="h-iletisim">İletişim</h2>
-    <p>
-      E-posta: <a href="mailto:adresini-buraya-yaz@ornek.com">adresini-buraya-yaz@ornek.com</a>
-      <br>
-      <span class="muted">Bu adresi ve varsa LinkedIn bağlantını kendi bilgilerinle değiştir.</span>
-    </p>
+    <h2 id="h-iletisim" data-i18n="contact.h">İletişim</h2>
+    <p><span data-i18n="contact.p">E-posta:</span> <a href="mailto:adresini-buraya-yaz@ornek.com">adresini-buraya-yaz@ornek.com</a><br>
+    <span class="muted" data-i18n="contact.note">Bu adresi ve varsa LinkedIn bağlantını kendi bilgilerinle değiştir.</span></p>
   </section>
 
 </main>
 
 <footer class="wrap">
-  <p class="muted">
-    Gövde yazı tipi
-    <a href="https://brailleinstitute.org/freefont">Atkinson Hyperlegible</a>,
-    az gören okuyucular için Braille Institute tarafından tasarlandı.
-  </p>
+  <p class="muted"><span data-i18n="footer.p1">Gövde yazı tipi</span> <a href="https://brailleinstitute.org/freefont">Atkinson Hyperlegible</a>, <span data-i18n="footer.p2">az gören okuyucular için Braille Institute tarafından tasarlandı.</span></p>
 </footer>
 
+<script src="app.js"></script>
 </body>
 </html>
