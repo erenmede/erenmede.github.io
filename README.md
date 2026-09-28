@@ -1,2 +1,2 @@
-[accessible_yegitek_bülten.pdf](https://github.com/user-attachments/files/pdf-sonra.pdf)
-[yegitek_e_bulten.pdf](https://github.com/user-attachments/files/pdf-once.pdf)
+[pdf-once.pdf](https://github.com/user-attachments/files/pdf-sonra.pdf)
+[pdf-sonra.pdf](https://github.com/user-attachments/files/pdf-once.pdf)
