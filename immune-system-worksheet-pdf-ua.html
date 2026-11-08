@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-contrast="normal" data-size="100">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Making a Turkish Ministry worksheet accessible: PDF/UA before and after — Eren Mede</title>
+<meta name="description" content="How a Biology 11 “Immune System” worksheet went from 1 tag to 404 tags and from thousands of PAC errors to zero, and why 3 warnings remain in the report.">
+<link rel="canonical" href="https://erenmede.github.io/en/posts/immune-system-worksheet-pdf-ua.html">
+<link rel="alternate" hreflang="tr" href="https://erenmede.github.io/yazilar/bagisiklik-sistemi-pdf-ua.html">
+<link rel="alternate" hreflang="en" href="https://erenmede.github.io/en/posts/immune-system-worksheet-pdf-ua.html">
+<link rel="alternate" hreflang="x-default" href="https://erenmede.github.io/yazilar/bagisiklik-sistemi-pdf-ua.html">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../../assets/site.css">
+<script src="../../assets/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#icerik">Skip to main content</a>
+<div class="prefs" role="region" aria-label="Display preferences">
+  <div class="wrap prefs-row">
+    <p class="pref"><span class="pref-label" id="lbl-lang">Language:</span>
+      <a lang="tr" hreflang="tr" href="../../yazilar/bagisiklik-sistemi-pdf-ua.html">Türkçe</a>
+      <a lang="en" hreflang="en" href="immune-system-worksheet-pdf-ua.html" aria-current="true">English</a></p>
+    <p class="pref js-only"><button type="button" id="contrast-toggle" aria-pressed="false">High contrast</button></p>
+    <div class="pref js-only" role="group" aria-labelledby="lbl-size"><span class="pref-label" id="lbl-size">Text size:</span>
+      <span class="btn-row"><button type="button" data-size-btn="100" aria-pressed="true">Normal</button><button type="button" data-size-btn="115" aria-pressed="false">Large</button><button type="button" data-size-btn="130" aria-pressed="false">Larger</button></span></div>
+  </div>
+</div>
+<header class="masthead">
+  <div class="wrap"><nav aria-label="Main menu"><ul><li><a href="../index.html#hakkimda">About</a></li><li><a href="../index.html#calisma">Work</a></li><li><a href="../index.html#ozgecmis">CV</a></li><li><a href="../index.html#iletisim">Contact</a></li></ul></nav></div>
+</header>
+<main id="icerik" tabindex="-1">
+  <div class="wrap">
+    <div class="post-head">
+      <a class="back" href="../index.html">Back to home page</a>
+      <h1>Making a Turkish Ministry worksheet accessible: PDF/UA before and after</h1>
+      <p class="post-meta"><time datetime="2026-11-08">8 November 2026</time> · 6 min read · Eren Mede</p>
+    </div>
+    <div class="post-grid">
+      <article>
+
+<p>What you see when you look at a PDF is not what a screen reader “sees”. In this post I describe what I did to make a Biology 11 “Immune System” worksheet accessible, the before-and-after difference in the PAC reports, and why the one warning left in the final report is a deliberate choice.</p>
+
+<h2>About the document</h2>
+<p>A four-page course worksheet prepared by the Ministry of National Education’s General Directorate of Secondary Education. It contains headings, instructions, two tables, multiple-choice questions, a diagram of innate and acquired immunity, and a chart of antibody levels over time. It has almost every hard element for accessibility, which makes it a good test document.</p>
+
+<h2>Before: fine to look at, no structure</h2>
+<p>When I checked the original file with PAC 2024 against PDF/UA-1, the result was clear: “This PDF file is not PDF/UA compliant.”</p>
+<p>An untagged PDF is like a book made of photographed pages, with no table of contents, no section headings and no page numbers. A screen reader will read the text somehow, but it does not know which part is a heading, which is a table cell and which is decoration, and it has to guess the reading order. For a blind student that is like walking through a city without a map.</p>
+<p>The missing language is a separate problem. No language was set in the document, so the “Natural language” check reported 3,827 errors. A screen reader may then read the Turkish text with the pronunciation rules of the wrong language.</p>
+
+<figure>
+  <img src="../../assets/pac-before-after.png" width="1600" height="900" alt="Two PAC reports side by side. The original file on the left reports “This PDF file is not PDF/UA compliant”; the accessible version on the right has no errors and only three warnings.">
+  <figcaption>Left: PAC report for the original file. Right: report for the accessible version. The same numbers are in the table below.</figcaption>
+</figure>
+
+<h2>What I changed</h2>
+<ul>
+  <li><strong>Title and language:</strong> the document title is “Biyoloji 11 İnsan Fizyolojisi” and the document language is Turkish (tr).</li>
+  <li><strong>Tagging:</strong> headings, paragraphs, lists and tables got proper tags. The tag count went from 1 to 404.</li>
+  <li><strong>Decoration:</strong> elements that carry no information were marked as artifacts, so the screen reader skips them.</li>
+  <li><strong>Tables:</strong> header cells were defined, and the empty answer cells that students fill in were associated with their headers.</li>
+  <li><strong>Images:</strong> the diagram and the chart were tagged as Figure and given alternative text (details below).</li>
+</ul>
+
+<h2>After: the PAC report</h2>
+<div class="table-wrap" role="region" aria-labelledby="t1" tabindex="0">
+<table>
+  <caption id="t1">PAC 2024 (PDF/UA-1) results: original and accessible version</caption>
+  <thead><tr><th scope="col">Check</th><th scope="col">Original</th><th scope="col">Accessible version</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Number of tags</th><td>1</td><td>404</td></tr>
+    <tr><th scope="row">Document title and language</th><td>None</td><td>Set (tr)</td></tr>
+    <tr><th scope="row">Content, errors</th><td>4,799</td><td>0</td></tr>
+    <tr><th scope="row">Natural language, errors</th><td>3,827</td><td>0</td></tr>
+    <tr><th scope="row">Metadata, errors</th><td>2</td><td>0</td></tr>
+    <tr><th scope="row">Document settings, errors</th><td>2</td><td>0</td></tr>
+    <tr><th scope="row">Alternative Descriptions, passed</th><td>0</td><td>3</td></tr>
+    <tr><th scope="row">Structure tree, warnings</th><td>0</td><td>3</td></tr>
+    <tr><th scope="row">File size</th><td>316 KB</td><td>680 KB</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The errors column is completely empty. The file doubling in size is normal: the structure tree, the tags and the embedded fonts add data to the file.</p>
+
+<h2>The triangle that is left: a warning, not an error</h2>
+<p>The result box for the accessible version says: “It’s possible that some PDF/UA requirements aren’t met.” That comes from the 3 warnings under Structure tree. In PAC, an <strong>error (failed)</strong> is a definite violation of a rule; a <strong>warning (warned)</strong> is something the tool cannot decide by machine and a person has to judge.</p>
+<p>These warnings come from my tagging some of the charts and diagrams as Figure. I did that on purpose, because it was the most efficient way to prepare those elements for a screen reader.</p>
+
+<h3>Why Figure and alt text?</h3>
+<p>Consider the alternative. If I tag every piece of text inside the chart (“Antibodies formed against the antigen”, “Week”, “10”, “100”) separately, a screen reader reads them piece by piece, without knowing what the chart means. It is like cutting a picture into strips and describing each strip on its own. Tagged as a Figure with well-written alt text, the reader says “chart” and delivers the image as one meaningful whole.</p>
+
+<h3>How to write the alt text: the antibody chart</h3>
+<blockquote lang="tr">
+  Zamana bağlı kandaki antikor düzeyi grafiği. Yatay eksen hafta, dikey eksen kandaki antikor düzeyi (10, 100, 1000). Antijenle ilk karşılaşmadan sonra yaklaşık 2.-3. haftada antikor düzeyi 10 civarına çıkıp düşer (birincil yanıt). Aynı antijenle tekrar karşılaşıldığında düzey çok daha hızlı yükselir, 1000’in üzerine çıkıp yavaşça azalır (ikincil yanıt, hafıza hücreleri). 11. haftada başka bir antijenle ilk karşılaşmada düzey yine 10 civarına çıkar.
+</blockquote>
+<p>This is the Turkish alt text as it appears in the document. In English it reads: a chart of antibody level in the blood over time; horizontal axis in weeks, vertical axis antibody level (10, 100, 1000). After first contact with an antigen, the level rises to about 10 around weeks 2 to 3, then falls (primary response). On meeting the same antigen again, the level rises much faster, passes 1000 and declines slowly (secondary response, memory cells). On first contact with a different antigen in week 11, the level again rises to about 10.</p>
+<p>The principle: describe <em>what the chart shows and what it leads to</em>, not every line in it.</p>
+
+<h3>When the diagram is an activity</h3>
+<p>The diagram of innate and acquired immunity is a different case, because it is an <strong>activity</strong>: students are asked to place 11 terms, A to İ, in the circles on the diagram (external defence, internal defence, acquired immunity). If the alt text only describes the structure of the diagram, a blind student cannot do the activity. So the alt text should name the regions and the number of circles (4, 5 and 2), and where needed you should offer an equivalent text alternative, for example a matching list that sorts the terms into three groups.</p>
+
+<h3>Should the warning stay?</h3>
+<p>I think it should. A warning is not a defect; it is a note saying “a person should judge this element”, and as the author of the alt text I made that judgement. The Figure and alt text approach does not conflict with PDF/UA-1 either.</p>
+
+<h2>Passing PAC does not mean being accessible</h2>
+<p>PAC only looks at criteria a machine can check. It cannot tell you:</p>
+<ul>
+  <li>whether the alt text is actually correct and useful</li>
+  <li>whether the reading order makes sense</li>
+  <li>whether the heading hierarchy is meaningful</li>
+</ul>
+<p>So the last step should always be to listen to the whole document with a screen reader (NVDA, VoiceOver) and to run the manual checks from the Matterhorn Protocol.</p>
+
+<h2>Summary</h2>
+<ul>
+  <li>Original: 1 tag, no title or language, thousands of errors.</li>
+  <li>Accessible version: 404 tags, title and language set, zero errors.</li>
+  <li>The 3 remaining warnings come from the Figure and alt text choice and are a deliberate decision.</li>
+  <li>Automated checking is a starting point; the real test is a real screen reader.</li>
+</ul>
+<p class="fine">The source document is a Ministry of National Education, General Directorate of Secondary Education material, used here only to show the accessibility work.</p>
+
+      </article>
+      <aside aria-labelledby="dl-h">
+        <h2 id="dl-h">Files</h2>
+        <ul>
+<li><a href="../../files/eesfmobr4gs.pdf" type="application/pdf" hreflang="tr">Original PDF (inaccessible)</a> <span class="fine">(PDF, 316 KB)</span></li>
+<li><a href="../../files/eesfmobr4gs_accessible.pdf" type="application/pdf" hreflang="tr">Accessible version</a> <span class="fine">(PDF, 681 KB)</span></li>
+<li><a href="../../files/eesfmobr4gs_PAC_UA_Report.pdf" type="application/pdf" hreflang="en">PAC report: before</a> <span class="fine">(PDF, 406 KB)</span></li>
+<li><a href="../../files/eesfmobr4gs_accessible_PAC_UA_Report.pdf" type="application/pdf" hreflang="en">PAC report: after</a> <span class="fine">(PDF, 380 KB)</span></li>
+        </ul>
+        <p class="fine">PDF; the document is in Turkish, the reports in English</p>
+      </aside>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>This site is plain HTML and CSS, with no framework. One small script stores your contrast and text size choices in this browser only. There is no tracking or analytics, and the fonts are served from the site itself.</p><p>I aimed for WCAG 2.2 AA, but the site has not had an independent accessibility audit. If you run into a barrier, please tell me and I will fix it.</p>
+    <p class="fine">Last updated: 8 November 2026</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+/* Eren Mede — site stili. Elle yazıldı, çerçeve yok. */
+@font-face{font-family:"Literata";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/literata-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Literata";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/literata-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Literata";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/literata-latin-400-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Literata";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/literata-latin-ext-400-italic.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Literata";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/literata-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Literata";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/literata-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/atkinson-hyperlegible-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/atkinson-hyperlegible-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/atkinson-hyperlegible-latin-400-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/atkinson-hyperlegible-latin-ext-400-italic.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/atkinson-hyperlegible-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/atkinson-hyperlegible-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* Renkler: kâğıt ve mürekkep. Hepsi WCAG AAA (7:1) üstü. */
+:root{
+  --bg:#f7f3ea; --fg:#14120e; --muted:#46423a; --accent:#8f1d1d;
+  --link:#0b3a8c; --visited:#5b2a86; --tint:#ece4cf;
+  --focus:#14120e; --halo:#f7f3ea;
+  --serif:"Literata",Georgia,"Times New Roman",serif;
+  --sans:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+  color-scheme:light;
+}
+html[data-contrast="high"]{
+  --bg:#000; --fg:#fff; --muted:#fff; --accent:#ffd400;
+  --link:#ffe600; --visited:#e3c0ff; --tint:#000;
+  --focus:#00ffff; --halo:#000;
+  color-scheme:dark;
+}
+@media (prefers-contrast:more){
+  html:not([data-contrast]){
+    --bg:#000; --fg:#fff; --muted:#fff; --accent:#ffd400;
+    --link:#ffe600; --visited:#e3c0ff; --tint:#000; --focus:#00ffff; --halo:#000;
+  }
+}
+
+html{font-size:100%}
+html[data-size="115"]{font-size:115%}
+html[data-size="130"]{font-size:130%}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:1.125rem;line-height:1.65;text-wrap:pretty}
+img{max-width:100%;height:auto}
+
+a{color:var(--link);text-decoration:underline;text-decoration-thickness:.09em;text-underline-offset:.2em}
+a:visited{color:var(--visited)}
+a:hover{text-decoration-thickness:.2em}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;box-shadow:0 0 0 6px var(--halo)}
+
+.wrap{max-width:66rem;margin-inline:auto;padding-inline:clamp(1rem,4vw,2.25rem)}
+
+.skip{position:absolute;left:1rem;top:-5rem;z-index:10;background:var(--fg);color:var(--bg);padding:.75rem 1.1rem;font-weight:700}
+.skip:focus{top:1rem}
+.skip:visited{color:var(--bg)}
+
+/* Görünüm tercihleri */
+.prefs{border-bottom:2px solid var(--fg);font-size:1rem}
+.prefs-row{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem 2rem;padding-block:.35rem}
+.pref{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .6rem;margin:0}
+.pref-label{font-weight:700}
+.prefs a{display:inline-flex;align-items:center;min-height:2.75rem;padding-inline:.4rem}
+.prefs a[aria-current="true"]{font-weight:700;text-decoration:none;color:var(--fg);border-bottom:4px solid var(--accent)}
+button{font:inherit;min-height:2.75rem;padding:.3rem .9rem;border:2px solid var(--fg);border-radius:0;background:transparent;color:var(--fg);cursor:pointer}
+button:hover{background:var(--tint);text-decoration:underline}
+button[aria-pressed="true"]{background:var(--fg);color:var(--bg);font-weight:700}
+button[aria-pressed="true"]::before{content:"✓\00a0";content:"✓\00a0" / ""}
+.btn-row{display:flex;flex-wrap:wrap;gap:.4rem}
+html:not(.js) .js-only{display:none}
+
+/* Üst menü */
+.masthead{padding-block:1rem;border-bottom:1px solid var(--fg)}
+.masthead ul{display:flex;flex-wrap:wrap;gap:.1rem 1.75rem;list-style:none;margin:0;padding:0}
+.masthead a{display:inline-block;padding-block:.5rem;color:var(--fg);text-decoration:none;font-weight:700}
+.masthead a:visited{color:var(--fg)}
+.masthead a:hover{text-decoration:underline;text-decoration-thickness:.15em}
+
+/* Başlıklar */
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.2;font-weight:700;margin:0}
+h1{font-size:clamp(2.7rem,8vw,5rem);line-height:1;letter-spacing:-.015em}
+h2{font-size:1.65rem}
+h3{font-size:1.25rem;margin-top:1.75rem;margin-bottom:.35rem}
+h4{font-size:1.1rem;margin-top:1.5rem;margin-bottom:.25rem}
+
+/* Açılış */
+.hero{padding-block:clamp(2.5rem,7vw,5rem) clamp(2rem,5vw,3.5rem)}
+.role{margin:.9rem 0 0;font-size:1.05rem;font-weight:700;letter-spacing:.02em}
+.lead{font-family:var(--serif);font-size:clamp(1.35rem,3vw,1.85rem);line-height:1.4;max-width:34em;margin:1.5rem 0 0}
+.meta-line{margin:1.25rem 0 0;color:var(--muted)}
+.cta{margin:1.75rem 0 0;display:flex;flex-wrap:wrap;gap:.5rem 2rem;font-weight:700}
+
+/* Bölümler: başlık solda, içerik sağda */
+.sec{border-top:4px solid var(--fg);padding-block:2rem 3rem;display:grid;gap:1rem 3rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:56rem){.sec{grid-template-columns:12rem minmax(0,1fr)}}
+.sec>div{max-width:44rem}
+.sec p{margin:0 0 1rem}
+.sec h3:first-child{margin-top:0}
+.fine{color:var(--muted);font-size:1rem}
+
+/* Kanıt tablosu */
+.table-wrap{overflow-x:auto;margin:1.25rem 0}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+caption{text-align:left;font-weight:700;padding-bottom:.5rem}
+th,td{text-align:left;padding:.55rem 1rem .55rem 0;border-bottom:1px solid var(--fg);vertical-align:top}
+thead th{border-bottom:3px solid var(--fg)}
+tbody th{font-weight:700}
+.bad{font-weight:700}
+
+/* Özgeçmiş */
+dl.cv{display:grid;grid-template-columns:minmax(0,1fr);margin:0 0 1rem}
+dl.cv dt{font-weight:700;margin-top:1.1rem}
+dl.cv dd{margin:0}
+@media (min-width:40rem){
+  dl.cv{grid-template-columns:10.5rem minmax(0,1fr);column-gap:1.75rem}
+  dl.cv dt{margin-top:0;padding-block:.55rem;border-top:1px solid var(--fg)}
+  dl.cv dd{padding-block:.55rem;border-top:1px solid var(--fg)}
+}
+ul.plain{margin:0 0 1rem;padding-left:1.25rem}
+ul.plain li{margin-bottom:.4rem}
+
+/* Yazı sayfası */
+.post-grid{display:grid;gap:2.5rem 4rem;grid-template-columns:minmax(0,1fr);padding-block:2rem 4rem}
+@media (min-width:62rem){.post-grid{grid-template-columns:minmax(0,40rem) 16rem}}
+.post-head{padding-block:2.25rem 0}
+.post-head h1{font-size:clamp(2rem,5.5vw,3.25rem);line-height:1.08;max-width:18em}
+.post-meta{margin:1rem 0 0;color:var(--muted)}
+.back{display:inline-block;margin-bottom:1.25rem;font-weight:700}
+article p,article li{max-width:40rem}
+article h2{margin-top:2.5rem;font-size:1.6rem}
+article h3{margin-top:1.75rem}
+article ul,article ol{padding-left:1.4rem}
+article li{margin-bottom:.45rem}
+blockquote{margin:1.25rem 0;padding:.1rem 0 .1rem 1.25rem;border-left:4px solid var(--fg);font-family:var(--serif);font-style:italic}
+figure{margin:2rem 0}
+figure img{display:block;border:2px solid var(--fg)}
+figcaption{margin-top:.5rem;font-size:1rem;color:var(--muted)}
+aside{border-top:4px solid var(--fg);padding-top:1rem;align-self:start}
+aside h2{font-size:1.25rem;margin:0 0 .75rem}
+aside ul{list-style:none;margin:0;padding:0}
+aside li{margin-bottom:.9rem}
+aside .fine{display:block}
+
+/* Altbilgi */
+footer{border-top:4px solid var(--fg);padding-block:1.75rem 3rem;font-size:1rem}
+footer p{margin:0 0 .75rem;max-width:46rem}
+
+@media print{
+  .prefs,.masthead,.skip,.cta,aside,.back{display:none!important}
+  :root,html[data-contrast="high"]{--bg:#fff;--fg:#000;--muted:#222;--link:#000;--visited:#000;--accent:#000;--tint:#fff}
+  body{font-size:11pt}
+  a{color:#000}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:.85em}
+  .sec{break-inside:avoid-page}
+}

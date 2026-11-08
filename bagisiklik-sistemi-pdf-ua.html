@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="tr" data-contrast="normal" data-size="100">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bir MEB çalışma yaprağını erişilebilir yapmak: PDF/UA öncesi ve sonrası — Eren Mede</title>
+<meta name="description" content="Biyoloji 11 “Bağışıklık Sistemi” çalışma yaprağının PAC raporlarında 1 etiketten 404 etikete, binlerce hatadan sıfır hataya yolculuğu ve raporda kalan 3 uyarının nedeni.">
+<link rel="canonical" href="https://erenmede.github.io/yazilar/bagisiklik-sistemi-pdf-ua.html">
+<link rel="alternate" hreflang="tr" href="https://erenmede.github.io/yazilar/bagisiklik-sistemi-pdf-ua.html">
+<link rel="alternate" hreflang="en" href="https://erenmede.github.io/en/posts/immune-system-worksheet-pdf-ua.html">
+<link rel="alternate" hreflang="x-default" href="https://erenmede.github.io/yazilar/bagisiklik-sistemi-pdf-ua.html">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#icerik">Ana içeriğe atla</a>
+<div class="prefs" role="region" aria-label="Görünüm tercihleri">
+  <div class="wrap prefs-row">
+    <p class="pref"><span class="pref-label" id="lbl-lang">Dil:</span>
+      <a lang="tr" hreflang="tr" href="bagisiklik-sistemi-pdf-ua.html" aria-current="true">Türkçe</a>
+      <a lang="en" hreflang="en" href="../en/posts/immune-system-worksheet-pdf-ua.html">English</a></p>
+    <p class="pref js-only"><button type="button" id="contrast-toggle" aria-pressed="false">Yüksek kontrast</button></p>
+    <div class="pref js-only" role="group" aria-labelledby="lbl-size"><span class="pref-label" id="lbl-size">Yazı boyutu:</span>
+      <span class="btn-row"><button type="button" data-size-btn="100" aria-pressed="true">Normal</button><button type="button" data-size-btn="115" aria-pressed="false">Büyük</button><button type="button" data-size-btn="130" aria-pressed="false">Çok büyük</button></span></div>
+  </div>
+</div>
+<header class="masthead">
+  <div class="wrap"><nav aria-label="Ana menü"><ul><li><a href="../index.html#hakkimda">Hakkımda</a></li><li><a href="../index.html#calisma">Çalışma</a></li><li><a href="../index.html#ozgecmis">Özgeçmiş</a></li><li><a href="../index.html#iletisim">İletişim</a></li></ul></nav></div>
+</header>
+<main id="icerik" tabindex="-1">
+  <div class="wrap">
+    <div class="post-head">
+      <a class="back" href="../index.html">Ana sayfaya dön</a>
+      <h1>Bir MEB çalışma yaprağını erişilebilir yapmak: PDF/UA öncesi ve sonrası</h1>
+      <p class="post-meta"><time datetime="2026-11-08">8 Kasım 2026</time> · 6 dk okuma · Eren Mede</p>
+    </div>
+    <div class="post-grid">
+      <article>
+
+<p>Bir PDF’e bakınca gördüğünüz ile bir ekran okuyucunun “gördüğü” aynı şey değildir. Bu yazıda Biyoloji 11 “Bağışıklık Sistemi” çalışma yaprağını erişilebilir hâle getirirken yaptıklarımı, PAC raporlarındaki öncesi/sonrası farkı ve sonuç raporunda kalan tek uyarının neden bilinçli bir tercih olduğunu anlatıyorum.</p>
+
+<h2>Belge hakkında</h2>
+<p>Dört sayfalık, Ortaöğretim Genel Müdürlüğü’nün hazırladığı bir ders çalışma yaprağı. İçinde başlıklar, yönergeler, iki tablo, çoktan seçmeli sorular, doğal ve kazanılmış bağışıklığı gösteren bir şema ve antikor düzeyinin zamanla değişimini gösteren bir grafik var. Erişilebilirlik açısından neredeyse her zor öğeyi barındırdığı için iyi bir test materyali.</p>
+
+<h2>Önce: görsel olarak sorunsuz, yapısal olarak yok</h2>
+<p>Orijinal dosyayı PAC 2024 ile PDF/UA-1 standardına göre denetlediğimde sonuç net: “This PDF file is not PDF/UA compliant.”</p>
+<p>Etiketsiz bir PDF, içindekiler tablosu, bölüm başlığı ve sayfa numarası olmayan, sayfaları fotoğraflanmış bir kitap gibidir. Ekran okuyucu metni bir şekilde okur ama hangisinin başlık, hangisinin tablo hücresi, hangisinin süs olduğunu bilmez; okuma sırasını da tahmin eder. Görme engelli bir öğrenci için bu, haritasız bir şehirde yürümek demektir.</p>
+<p>Dil bilgisinin olmaması da ayrı bir sorun. Belgede dil tanımlı olmadığı için “Natural language” kontrolünde 3827 hata çıktı. Bu durumda ekran okuyucu Türkçe metni yanlış dilin telaffuz kurallarıyla okuyabilir.</p>
+
+<figure>
+  <img src="../assets/pac-before-after.png" width="1600" height="900" alt="İki PAC raporu yan yana. Soldaki orijinal dosya “PDF/UA uyumlu değil” sonucu veriyor; sağdaki erişilebilir sürümde hata yok, yalnızca üç uyarı var.">
+  <figcaption>Sol: orijinal dosyanın PAC raporu. Sağ: erişilebilir sürümün raporu. Aynı sayılar aşağıdaki tabloda.</figcaption>
+</figure>
+
+<h2>Yaptığım düzenlemeler</h2>
+<ul>
+  <li><strong>Başlık ve dil:</strong> Belge başlığı “Biyoloji 11 İnsan Fizyolojisi” olarak tanımlandı, belge dili Türkçe (tr) yapıldı.</li>
+  <li><strong>Etiketleme:</strong> Başlıklar, paragraflar, listeler ve tablolar uygun etiketlerle işaretlendi. Etiket sayısı 1’den 404’e çıktı.</li>
+  <li><strong>Süslemeler:</strong> Bilgi taşımayan öğeler artifact olarak işaretlendi, böylece ekran okuyucu bunları okumuyor.</li>
+  <li><strong>Tablolar:</strong> Başlık hücreleri tanımlandı; öğrencinin dolduracağı boş cevap hücreleri başlıklarla ilişkilendirildi.</li>
+  <li><strong>Görseller:</strong> Şema ve grafik Figure olarak etiketlendi ve alternatif metin eklendi (aşağıda ayrıntılı).</li>
+</ul>
+
+<h2>Sonra: PAC raporu</h2>
+<div class="table-wrap" role="region" aria-labelledby="t1" tabindex="0">
+<table>
+  <caption id="t1">PAC 2024 (PDF/UA-1) sonuçları: orijinal ve erişilebilir sürüm</caption>
+  <thead><tr><th scope="col">Kontrol</th><th scope="col">Orijinal</th><th scope="col">Erişilebilir sürüm</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Etiket sayısı</th><td>1</td><td>404</td></tr>
+    <tr><th scope="row">Belge başlığı ve dili</th><td>Yok</td><td>Tanımlı (tr)</td></tr>
+    <tr><th scope="row">Content, hata</th><td>4799</td><td>0</td></tr>
+    <tr><th scope="row">Natural language, hata</th><td>3827</td><td>0</td></tr>
+    <tr><th scope="row">Metadata, hata</th><td>2</td><td>0</td></tr>
+    <tr><th scope="row">Document settings, hata</th><td>2</td><td>0</td></tr>
+    <tr><th scope="row">Alternative Descriptions, geçen</th><td>0</td><td>3</td></tr>
+    <tr><th scope="row">Structure tree, uyarı</th><td>0</td><td>3</td></tr>
+    <tr><th scope="row">Dosya boyutu</th><td>316 KB</td><td>680 KB</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Hata sütunu tamamen boş. Dosya boyutunun iki katına çıkması normal: yapı ağacı, etiketler ve gömülü yazı tipleri dosyaya ek veri olarak giriyor.</p>
+
+<h2>Raporda kalan üçgen: hata değil, uyarı</h2>
+<p>Erişilebilir sürümün sonuç kutusunda şu ifade çıkıyor: “It’s possible that some PDF/UA requirements aren’t met.” Bu, Structure tree altındaki 3 uyarıdan geliyor. PAC’te <strong>hata (failed)</strong> kuralın kesin ihlalidir; <strong>uyarı (warned)</strong> ise aracın makinece karar veremediği, bir insanın değerlendirmesi gereken durumdur.</p>
+<p>Bu uyarılar, bazı grafik ve şemaları Figure olarak etiketlememden kaynaklanıyor. Bunu bilerek yaptım, çünkü bu öğeleri ekran okuyucuya hazırlamanın en verimli yolu buydu.</p>
+
+<h3>Neden Figure ve alt metin?</h3>
+<p>Alternatifi düşünelim: grafiğin içindeki her metni (“Antijene karşı oluşan antikorlar”, “Hafta”, “10”, “100”) ayrı ayrı etiketlersem ekran okuyucu bunları, grafiğin anlamını bilmeden, parça parça okur. Bu, bir resmi şeritlere kesip her şeridi ayrı ayrı anlatmaya benzer. Figure olarak etiketlenip iyi yazılmış bir alt metinle birleştiğinde okuyucu “grafik” der ve görseli tek bir bütün olarak aktarır.</p>
+
+<h3>Alt metin nasıl yazılmalı? Antikor grafiği örneği</h3>
+<blockquote lang="tr">
+  Zamana bağlı kandaki antikor düzeyi grafiği. Yatay eksen hafta, dikey eksen kandaki antikor düzeyi (10, 100, 1000). Antijenle ilk karşılaşmadan sonra yaklaşık 2.-3. haftada antikor düzeyi 10 civarına çıkıp düşer (birincil yanıt). Aynı antijenle tekrar karşılaşıldığında düzey çok daha hızlı yükselir, 1000’in üzerine çıkıp yavaşça azalır (ikincil yanıt, hafıza hücreleri). 11. haftada başka bir antijenle ilk karşılaşmada düzey yine 10 civarına çıkar.
+</blockquote>
+<p>İlke şu: grafiğin <em>ne gösterdiğini ve hangi sonuca götürdüğünü</em> anlatın, her çizgiyi tek tek tarif etmeyin.</p>
+
+<h3>Şema bir etkinlik olunca</h3>
+<p>Doğal ve kazanılmış bağışıklık şeması ayrı bir durum, çünkü bir <strong>etkinlik</strong>: öğrenciden A-İ arası 11 terimi şemadaki dairelere (vücut dışı savunma, vücut içi savunma, kazanılmış bağışıklık) yerleştirmesi isteniyor. Alt metin yalnızca şemanın yapısını anlatırsa görme engelli öğrenci etkinliği yapamaz. Bu yüzden alt metinde bölgeleri ve daire sayılarını (4, 5 ve 2) belirtmek, gerekirse etkinliğe eşdeğer bir metin alternatifi sunmak gerekir; örneğin terimleri üç gruba ayıran bir eşleştirme listesi.</p>
+
+<h3>Uyarı kalsın mı?</h3>
+<p>Bence kalsın. Uyarı bir kusur değil, “bu öğeyi bir insan değerlendirsin” notu; bu değerlendirmeyi alt metni yazan kişi olarak ben yaptım. Figure ve alt metin yaklaşımı PDF/UA-1 ile de çelişmiyor.</p>
+
+<h2>PAC’i geçmek erişilebilir olmak demek değildir</h2>
+<p>PAC yalnızca makinece denetlenebilen kriterlere bakar. Şunları kontrol edemez:</p>
+<ul>
+  <li>Alt metnin gerçekten doğru ve yararlı olup olmadığı</li>
+  <li>Okuma sırasının mantıklı olup olmadığı</li>
+  <li>Başlık hiyerarşisinin anlamlı olup olmadığı</li>
+</ul>
+<p>Bu yüzden son adım her zaman belgeyi bir ekran okuyucuyla (NVDA, VoiceOver) baştan sona dinlemek ve Matterhorn Protokolü’ndeki manuel kontrolleri yapmak olmalı.</p>
+
+<h2>Özet</h2>
+<ul>
+  <li>Orijinal: 1 etiket, başlık ve dil yok, binlerce hata.</li>
+  <li>Erişilebilir sürüm: 404 etiket, başlık ve dil tanımlı, sıfır hata.</li>
+  <li>Kalan 3 uyarı, Figure ve alt metin tercihinden kaynaklanıyor ve bilinçli bir karar.</li>
+  <li>Otomatik denetim başlangıç noktasıdır; asıl test gerçek bir ekran okuyucuyla yapılır.</li>
+</ul>
+<p class="fine">Kaynak belge Milli Eğitim Bakanlığı Ortaöğretim Genel Müdürlüğü materyalidir; bu yazıda yalnızca erişilebilirlik çalışmasını göstermek amacıyla kullanılmıştır.</p>
+
+      </article>
+      <aside aria-labelledby="dl-h">
+        <h2 id="dl-h">Dosyalar</h2>
+        <ul>
+<li><a href="../files/eesfmobr4gs.pdf" type="application/pdf" hreflang="tr">Orijinal PDF (erişilemez)</a> <span class="fine">(PDF, 316 KB)</span></li>
+<li><a href="../files/eesfmobr4gs_accessible.pdf" type="application/pdf" hreflang="tr">Erişilebilir sürüm</a> <span class="fine">(PDF, 681 KB)</span></li>
+<li><a href="../files/eesfmobr4gs_PAC_UA_Report.pdf" type="application/pdf" hreflang="en">PAC raporu: önce</a> <span class="fine">(PDF, 406 KB)</span></li>
+<li><a href="../files/eesfmobr4gs_accessible_PAC_UA_Report.pdf" type="application/pdf" hreflang="en">PAC raporu: sonra</a> <span class="fine">(PDF, 380 KB)</span></li>
+        </ul>
+        <p class="fine">PDF, Türkçe belge; raporlar İngilizce</p>
+      </aside>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Bu site çerçevesiz, düz HTML ve CSS ile hazırlandı. Tek küçük betik, seçtiğiniz kontrast ve yazı boyutunu yalnızca bu tarayıcıda saklar; izleme ve analitik yok, yazı tipleri sitenin kendisinden yüklenir.</p><p>WCAG 2.2 AA hedeflendi, ancak site bağımsız bir erişilebilirlik denetiminden geçmedi. Bir engelle karşılaşırsanız lütfen bildirin, düzelteyim.</p>
+    <p class="fine">Son güncelleme: 8 Kasım 2026</p>
+  </div>
+</footer>
+</body>
+</html>
